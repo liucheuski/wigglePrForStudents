@@ -3,6 +3,7 @@ package com.stv.design.designtests;
 import com.stv.framework.core.drivers.Driver;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 
 import java.util.concurrent.TimeUnit;

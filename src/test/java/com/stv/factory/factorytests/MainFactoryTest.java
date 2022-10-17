@@ -20,4 +20,5 @@ public class MainFactoryTest extends BasicFactoryTest {
         mainFactoryPage.clickOnAccountLink();
         Assert.assertEquals(new LoginPage().isLoginContainerDisplayed(), true, "Login page isn't loaded properly");
     }
+
 }
