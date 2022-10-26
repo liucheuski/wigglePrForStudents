@@ -3,6 +3,7 @@ package com.stv.factory.factorytests;
 import com.stv.factory.factorypages.LoginPage;
 import com.stv.factory.factorypages.MainFactoryPage;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class MainFactoryTest extends BasicFactoryTest {
@@ -25,12 +26,22 @@ public class MainFactoryTest extends BasicFactoryTest {
         Assert.assertEquals(new LoginPage().isLoginContainerDisplayed(), true, "Login page isn't loaded properly");
     }
 
-    @Test(description = "Assert in the email input types correct characters", groups = "EmailAddress",
+    @Test(description = "Assert in the email input types characters", groups = "EmailAddress",
             dependsOnGroups = "LoginPage")
     public void assertEmailAddressLoginPageAcceptCharacters() {
         LoginPage loginPage = new LoginPage();
         loginPage.emailAddressClear();
-        Assert.assertEquals(new LoginPage().typeEmailAddress(incorrectEmailAddress), incorrectEmailAddress);
+        loginPage.typeEmailAddress(incorrectEmailAddress);
+        Assert.assertTrue(loginPage.getTypedEmailAddress() != null);
+    }
+
+    @Test(description = "Assert in the email input types correct characters", groups = "EmailAddress",
+            dependsOnGroups = "LoginPage")
+    public void assertEmailAddressLoginPageAcceptCorrectCharacters() {
+        LoginPage loginPage = new LoginPage();
+        loginPage.emailAddressClear();
+        loginPage.typeEmailAddress(incorrectEmailAddress);
+        Assert.assertTrue(loginPage.typingIsCorrect(incorrectEmailAddress));
     }
 
     @Test(description = "Assert in the email input helper text will not appear, when email address is valid",
@@ -50,5 +61,11 @@ public class MainFactoryTest extends BasicFactoryTest {
         loginPage.typeEmailAddress(incorrectEmailAddress);
         loginPage.onBlur();
         Assert.assertTrue(loginPage.isEmailAddressHelperTextDisplayed());
+    }
+
+    @BeforeClass(description = "Start browser")
+    @Override
+    public void setUp() {
+        super.setUp();
     }
 }

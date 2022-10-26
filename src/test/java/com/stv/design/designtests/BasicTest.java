@@ -1,6 +1,7 @@
 package com.stv.design.designtests;
 
 import com.stv.framework.core.drivers.Driver;
+import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;

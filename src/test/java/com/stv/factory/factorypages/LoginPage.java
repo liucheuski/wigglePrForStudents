@@ -1,10 +1,11 @@
 package com.stv.factory.factorypages;
 
+import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends FactoryPage {
-    @FindBy(className = "bem-checkout__login-container")
+public class LoginPage extends MainFactoryPage {
+    @FindBy(xpath = "//div[@class='bem-checkout__login-container']")
     private WebElement loginContainer;
 
     @FindBy(xpath = "//input[@name='LogOnModel.UserName']")
@@ -15,13 +16,21 @@ public class LoginPage extends FactoryPage {
     @FindBy(xpath = "//div[@class='bem-checkout__container-block']")
     private WebElement signInContainer;
 
+    @Given("sign in form is opened")
     public boolean isLoginContainerDisplayed() {
         return loginContainer.isDisplayed();
     }
 
-    public String typeEmailAddress(String text) {
+    public void typeEmailAddress(String text) {
         emailAddressInput.sendKeys(text);
+    }
+
+    public String getTypedEmailAddress() {
         return emailAddressInput.getAttribute("value");
+    }
+
+    public boolean typingIsCorrect(String text) {
+        return getTypedEmailAddress().equals(text);
     }
 
     public boolean isEmailAddressHelperTextDisplayed() {
