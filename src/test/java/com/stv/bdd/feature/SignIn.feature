@@ -25,5 +25,3 @@ Feature: Login to account
       | weefew    |
       | 23234     |
       | wrfwvw@wf |
-    Then close browser
-
