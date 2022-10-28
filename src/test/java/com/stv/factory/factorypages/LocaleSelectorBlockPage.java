@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class LocaleSelectorBlock extends MainFactoryPage {
+public class LocaleSelectorBlockPage extends MainFactoryPage {
     @FindBy(xpath = "//select[@id='langId']")
     private WebElement regionAndLanguageSelect;
     @FindBy(xpath = "//select[@id='currencyId']")

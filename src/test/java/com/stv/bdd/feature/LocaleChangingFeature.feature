@@ -1,6 +1,6 @@
 Feature: Finish task
 
-  Scenario: start
+  Scenario: Open login page
     Given main page is opened
     Then accept cookies
 

@@ -1,17 +1,17 @@
 package com.stv.bdd.steps;
 
-import com.stv.factory.factorypages.CartContainer;
+import com.stv.factory.factorypages.CartContainerPage;
 import com.stv.factory.factorytests.BasicFactoryTest;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class CartContainerSteps extends BasicFactoryTest {
-    private CartContainer cartContainer = new CartContainer();
+public class CartContainerPageSteps extends BasicFactoryTest {
+    private CartContainerPage cartContainerPage = new CartContainerPage();
 
     @When("click cart")
     public void clickFlag() {
-        cartContainer.click();
+        cartContainerPage.click();
     }
 
     @Then("check that cart has opened")
@@ -21,6 +21,6 @@ public class CartContainerSteps extends BasicFactoryTest {
 
     @And("cart is empty")
     public void cartIsEmpty() {
-        cartContainer.cartIsEmpty();
+        cartContainerPage.cartIsEmpty();
     }
 }

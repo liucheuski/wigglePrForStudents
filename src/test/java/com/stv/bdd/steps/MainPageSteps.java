@@ -11,7 +11,6 @@ public class MainPageSteps extends BasicFactoryTest {
 
     private MainFactoryPage mainPage = new MainFactoryPage();
 
-
     @Given("main page is opened")
     @Override
     public void setUp() {
@@ -38,7 +37,6 @@ public class MainPageSteps extends BasicFactoryTest {
     public void localeSelectorBlockIsDisplayed() {
         mainPage.isLocaleSelectorBlockDisplayed();
     }
-
 
     @Then("check that flag has changed {string}")
     public void checkThatFlagHasChanged(String flag) {

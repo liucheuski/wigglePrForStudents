@@ -4,7 +4,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CartContainer extends MainFactoryPage {
+public class CartContainerPage extends MainFactoryPage {
     @FindBy(xpath = "//li[@id='basketContainer']")
     private WebElement cartContainer;
     @FindBy(xpath = "//div[@d='basket-product-list-container']")
